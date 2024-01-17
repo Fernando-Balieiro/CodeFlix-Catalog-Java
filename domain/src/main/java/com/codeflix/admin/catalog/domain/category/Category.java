@@ -24,17 +24,18 @@ public class Category extends AggregateRoot<CategoryId> {
         this.deletedAt = aDeletionDate;
     }
 
-    private final String name;
-    private final String description;
-    private final boolean active;
-    private final Instant createdAt;
-    private final Instant updatedAt;
-    private final Instant deletedAt;
+    private String name;
+    private String description;
+    private boolean active;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private Instant deletedAt;
 
-    public static com.codeflix.admin.catalog.domain.category.Category categoryFactory(final String name, final String description, final boolean isActive) {
+    public static Category categoryFactory(final String name, final String description, final boolean isActive) {
         final var id = CategoryId.unique();
         final var now = Instant.now();
-        return new com.codeflix.admin.catalog.domain.category.Category(id, name, description, isActive, now, now, null);
+        final var deletedAt = isActive ? null : now;
+        return new com.codeflix.admin.catalog.domain.category.Category(id, name, description, isActive, now, now, deletedAt);
     }
 
     public String getName() {
@@ -65,5 +66,23 @@ public class Category extends AggregateRoot<CategoryId> {
     public void validate(final ValidationHandler handler) {
         new CategoryValidator(this, handler).validate();
     }
+
+    public Category activate() {
+        this.deletedAt = null;
+        this.active = true;
+        this.updatedAt = Instant.now();
+        return this;
+    }
+
+    public Category deactivate() {
+        if (getDeletedAt() == null) {
+            this.deletedAt = Instant.now();
+        }
+
+        this.active = false;
+        this.updatedAt = Instant.now();
+        return this;
+    }
+
 }
 
