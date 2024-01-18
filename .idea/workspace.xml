@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a17a96c-bcdb-4868-a6f0-801d0fe160f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/CategoryValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/CategoryValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/exceptions/DomainException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/exceptions/DomainException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category/CategoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category/CategoryTest.java" afterDir="false" />
     </list>
@@ -86,6 +86,8 @@
     "Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException.executor": "Run",
     "Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException.executor": "Run",
     "Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError.executor": "Run",
+    "Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor": "Run",
+    "Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -100,6 +102,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -109,7 +112,7 @@
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CategoryTest">
+  <component name="RunManager" selected="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams">
     <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -124,6 +127,30 @@
             <option value=":domain:test" />
             <option value="--tests" />
             <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CategoryTest.givenInvalidEmptyName_ThrowDomainException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,7 +198,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenInvalidEmptyName_ThrowDomainException&quot;" />
+            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,7 +209,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CategoryTest.givenValidCategory_UpdateToInactive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,31 +222,7 @@
           <list>
             <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CategoryTest.givenInvalidNullName_ShouldRecieveError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenInvalidNullName_ShouldRecieveError&quot;" />
+            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenValidCategory_UpdateToInactive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -232,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" />
+        <item itemvalue="Gradle.CategoryTest.givenValidCategory_UpdateToInactive" />
+        <item itemvalue="Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled" />
         <item itemvalue="Gradle.CategoryTest" />
         <item itemvalue="Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled" />
-        <item itemvalue="Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException" />
-        <item itemvalue="Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException" />
-        <item itemvalue="Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +258,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705517776014</updated>
-      <workItem from="1705517777090" duration="9590000" />
+      <workItem from="1705517777090" duration="9695000" />
+      <workItem from="1705591734593" duration="4121000" />
     </task>
     <servers />
   </component>

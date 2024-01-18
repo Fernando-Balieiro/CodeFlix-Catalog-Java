@@ -2,6 +2,7 @@ package com.codeflix.admin.catalog.domain.category;
 
 import com.codeflix.admin.catalog.domain.AggregateRoot;
 import com.codeflix.admin.catalog.domain.validation.ValidationHandler;
+import com.codeflix.admin.catalog.domain.validation.handler.ThrowsValidationHandler;
 
 import java.time.Instant;
 
@@ -27,7 +28,7 @@ public class Category extends AggregateRoot<CategoryId> {
     private String name;
     private String description;
     private boolean active;
-    private Instant createdAt;
+    private final Instant createdAt;
     private Instant updatedAt;
     private Instant deletedAt;
 
@@ -84,5 +85,23 @@ public class Category extends AggregateRoot<CategoryId> {
         return this;
     }
 
+    public Category update(
+            final String name,
+            final String description,
+            final boolean isActive
+    ) {
+
+        if (isActive) {
+            activate();
+        } else {
+            deactivate();
+        }
+
+        this.name = name;
+        this.description = description;
+        this.updatedAt = Instant.now();
+        validate(new ThrowsValidationHandler());
+        return this;
+    }
 }
 

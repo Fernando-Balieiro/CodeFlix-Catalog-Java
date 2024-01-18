@@ -9,13 +9,12 @@ import java.util.List;
 
 public class ThrowsValidationHandler implements ValidationHandler {
     @Override
-    public ValidationHandler append(final Error anError) {
+    public void append(final Error anError) {
         throw DomainException.DomainExceptionFactory(anError);
     }
 
     @Override
     public ValidationHandler append(final ValidationHandler aHandler) {
-//        final var error = aHandler.getErrors().getFirst();
         throw DomainException.DomainExceptionFactory(aHandler.getErrors());
     }
 
