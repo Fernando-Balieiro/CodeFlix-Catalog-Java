@@ -36,7 +36,7 @@ public class Category extends AggregateRoot<CategoryId> {
         final var id = CategoryId.unique();
         final var now = Instant.now();
         final var deletedAt = isActive ? null : now;
-        return new com.codeflix.admin.catalog.domain.category.Category(id, name, description, isActive, now, now, deletedAt);
+        return new Category(id, name, description, isActive, now, now, deletedAt);
     }
 
     public String getName() {

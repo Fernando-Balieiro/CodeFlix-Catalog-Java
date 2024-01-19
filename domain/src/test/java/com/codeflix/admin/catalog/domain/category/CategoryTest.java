@@ -289,6 +289,8 @@ public class CategoryTest {
     public void givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
+        final var expectedErrors = 1;
+        final var expectedErrorMessage = "'name' must be between 3 and 255 characters";
         final var expectedIsActive = true;
         final var createdCategory = Category.categoryFactory(
                 expectedName,
@@ -296,9 +298,12 @@ public class CategoryTest {
                 expectedIsActive
         );
 
-        Assertions.assertThrows(DomainException.class,
+        final var exception = Assertions.assertThrows(DomainException.class,
                 () -> createdCategory.update("fi", expectedDescription, expectedIsActive)
         );
+
+        Assertions.assertEquals(exception.getErrors().get(0).message(), expectedErrorMessage);
+        Assertions.assertEquals(exception.getErrors().size(), expectedErrors);
     }
 }
 
