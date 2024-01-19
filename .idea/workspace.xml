@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a17a96c-bcdb-4868-a6f0-801d0fe160f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/CategoryGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/CategorySearchQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/pagination/Pagination.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/application/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category/CategoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category/CategoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -77,42 +81,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.Admin-Catalog [test].executor": "Run",
-    "Gradle.CategoryTest.executor": "Run",
-    "Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled.executor": "Run",
-    "Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException.executor": "Run",
-    "Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException.executor": "Run",
-    "Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError.executor": "Run",
-    "Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor": "Run",
-    "Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/fernando/CodeFlix/Admin-Catalog/domain/src/test/java/com/codeflix/admin/catalog/domain/category",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Admin-Catalog [test].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fernando/CodeFlix/Admin-Catalog/domain/src/test/java/com/codeflix/admin/catalog/domain/category&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;PluginSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category" />
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams">
+  <component name="RunManager" selected="Gradle.CategoryTest">
     <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -235,10 +240,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CategoryTest" />
         <item itemvalue="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" />
         <item itemvalue="Gradle.CategoryTest.givenValidCategory_UpdateToInactive" />
         <item itemvalue="Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled" />
-        <item itemvalue="Gradle.CategoryTest" />
         <item itemvalue="Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled" />
       </list>
     </recent_temporary>
@@ -260,6 +265,10 @@
       <updated>1705517776014</updated>
       <workItem from="1705517777090" duration="9695000" />
       <workItem from="1705591734593" duration="4121000" />
+      <workItem from="1705672863542" duration="1177000" />
+      <workItem from="1705674049124" duration="33000" />
+      <workItem from="1705674092371" duration="1643000" />
+      <workItem from="1705682022269" duration="2275000" />
     </task>
     <servers />
   </component>
