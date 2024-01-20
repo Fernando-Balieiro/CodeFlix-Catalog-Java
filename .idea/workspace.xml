@@ -91,6 +91,9 @@
     "Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor": "Run",
     "Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor": "Run",
     "Gradle.CreateCategoryUseCaseTest.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -115,7 +118,7 @@
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CreateCategoryUseCaseTest">
+  <component name="RunManager" selected="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException">
     <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -130,78 +133,6 @@
             <option value=":domain:test" />
             <option value="--tests" />
             <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CategoryTest.givenValidCategory_UpdateToInactive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest.givenValidCategory_UpdateToInactive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -236,13 +167,85 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" />
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled" />
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" />
         <item itemvalue="Gradle.CreateCategoryUseCaseTest" />
         <item itemvalue="Gradle.CategoryTest" />
-        <item itemvalue="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" />
-        <item itemvalue="Gradle.CategoryTest.givenValidCategory_UpdateToInactive" />
-        <item itemvalue="Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +271,8 @@
       <workItem from="1705674092371" duration="1643000" />
       <workItem from="1705682022269" duration="9533000" />
       <workItem from="1705700857228" duration="50000" />
-      <workItem from="1705700920681" duration="814000" />
+      <workItem from="1705700920681" duration="1330000" />
+      <workItem from="1705713294094" duration="2253000" />
     </task>
     <servers />
   </component>
