@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5a17a96c-bcdb-4868-a6f0-801d0fe160f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/application/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/DefaultCreateCategoryUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/create/DefaultCreateCategoryUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/src/test/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/test/java/com/codeflix/admin/catalog/application/category/create/CreateCategoryUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/ValidationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/validation/handler/ThrowsValidationHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +70,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/5.9.0/faa88b96db3aeb96a93e83dec7491345bfbfc414/mockito-core-5.9.0.jar!/org/mockito/AdditionalAnswers.class" root0="SKIP_INSPECTION" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -91,9 +102,10 @@
     "Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor": "Run",
     "Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor": "Run",
     "Gradle.CreateCategoryUseCaseTest.executor": "Run",
-    "Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled.executor": "Debug",
     "Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled.executor": "Run",
     "Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -118,7 +130,7 @@
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException">
+  <component name="RunManager" selected="Gradle.CreateCategoryUseCaseTest">
     <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,30 +203,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -239,12 +227,36 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" />
-        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled" />
-        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" />
         <item itemvalue="Gradle.CreateCategoryUseCaseTest" />
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" />
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" />
+        <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled" />
         <item itemvalue="Gradle.CategoryTest" />
       </list>
     </recent_temporary>
@@ -272,11 +284,23 @@
       <workItem from="1705682022269" duration="9533000" />
       <workItem from="1705700857228" duration="50000" />
       <workItem from="1705700920681" duration="1330000" />
-      <workItem from="1705713294094" duration="2253000" />
+      <workItem from="1705713294094" duration="2484000" />
+      <workItem from="1705777718569" duration="4495000" />
+      <workItem from="1705786930555" duration="450000" />
+      <workItem from="1705787392166" duration="2161000" />
+      <workItem from="1705802621660" duration="106000" />
+      <workItem from="1705802748172" duration="2990000" />
+      <workItem from="1705853900100" duration="2217000" />
+      <workItem from="1705944232635" duration="1641000" />
+      <workItem from="1705950686279" duration="184000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

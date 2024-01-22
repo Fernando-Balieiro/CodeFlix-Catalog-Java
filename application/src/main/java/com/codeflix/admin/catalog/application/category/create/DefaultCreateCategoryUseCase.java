@@ -2,30 +2,41 @@ package com.codeflix.admin.catalog.application.category.create;
 
 import com.codeflix.admin.catalog.domain.category.Category;
 import com.codeflix.admin.catalog.domain.category.CategoryGateway;
-import com.codeflix.admin.catalog.domain.validation.handler.ThrowsValidationHandler;
+import com.codeflix.admin.catalog.domain.validation.handler.Notification;
+import io.vavr.API;
+import io.vavr.control.Either;
 
 import java.util.Objects;
 
+import static io.vavr.API.*;
+
 public class DefaultCreateCategoryUseCase implements CreateCategoryUseCase {
 
-    private final CategoryGateway gateway;
+    private final CategoryGateway categoryGateway;
 
     public DefaultCreateCategoryUseCase(CategoryGateway gateway) {
-        this.gateway = Objects.requireNonNull(gateway);
+        this.categoryGateway = Objects.requireNonNull(gateway);
     }
 
     @Override
-    public CreateCategoryOutput execute(final CreateCategoryCommand anInput) {
+    public Either<Notification, CreateCategoryOutput> execute(final CreateCategoryCommand aCommand) {
 
-        final var aCategory = Category.categoryFactory(
-                anInput.name(),
-                anInput.description(),
-                anInput.isActive()
-        );
+        final var aName = aCommand.name();
+        final var aDescription = aCommand.description();
+        final var isActive = aCommand.isActive();
 
-        aCategory.validate(new ThrowsValidationHandler());
+        final var notification = Notification.notificationFactory();
 
-        return CreateCategoryOutput.from(this.gateway.create(aCategory));
+        final var aCategory = Category.categoryFactory(aName, aDescription, isActive);
+        aCategory.validate(notification);
 
+        return notification.hasErrors() ? Left(notification) : create(aCategory);
+    }
+
+    // ESSA BOSTA TA BUGADAAAAA
+    private Either<Notification, CreateCategoryOutput> create(Category aCategory) {
+        return Try(() -> this.categoryGateway.create(aCategory))
+                .toEither()
+                .bimap(Notification::notificationFactory, CreateCategoryOutput::from);
     }
 }

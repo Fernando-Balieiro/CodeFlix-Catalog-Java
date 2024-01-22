@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ThrowsValidationHandler implements ValidationHandler {
     @Override
-    public void append(final Error anError) {
+    public ValidationHandler append(final Error anError) {
         throw DomainException.DomainExceptionFactory(anError);
     }
 
