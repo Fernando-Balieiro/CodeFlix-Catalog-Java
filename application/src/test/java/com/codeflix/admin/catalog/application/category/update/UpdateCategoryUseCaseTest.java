@@ -1,5 +1,6 @@
 package com.codeflix.admin.catalog.application.category.update;
 
+import com.codeflix.admin.catalog.application.category.create.CreateCategoryCommand;
 import com.codeflix.admin.catalog.domain.category.Category;
 import com.codeflix.admin.catalog.domain.category.CategoryGateway;
 import com.codeflix.admin.catalog.domain.validation.handler.Notification;
@@ -106,6 +107,94 @@ public class UpdateCategoryUseCaseTest {
         Mockito.verify(categoryGateway, times(0)).update(any());
 
 //        TESTE QUEBRAVA POIS ESTAVA FAZENDO CHECAGEM DE VALIDAÇÃO NA CLASSE DE CATEGORIA
+
+    }
+
+    @Test
+    public void givenInvalidName_ShouldReturnDomainException_WhenUpdateCategoryIsCalled() {
+
+        final var aCategory =
+                Category.categoryFactory("Film", null, true);
+
+        final String expectedName = null;
+        final var expectedDescription = "A categoria mais assistida";
+        final var expectedIsActive = true;
+        final var expectedId = aCategory.getId();
+        final var expectedErrorMessage = "'name' should not be null";
+        final var expectedErrorCount = 1;
+
+        final var aCommand =
+                UpdateCategoryCommand.updateCategoryFactory(
+                        expectedId.getValue(),
+                        expectedName,
+                        expectedDescription,
+                        expectedIsActive
+                );
+
+        when(categoryGateway.findById(eq(expectedId)))
+                .thenReturn(Optional.of(Category.categoryFactory(aCategory)));
+
+        final var notification = useCase.execute(aCommand).getLeft();
+
+        Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage, notification.firstError().message());
+
+        Mockito.verify(categoryGateway, times(0)).create(any());
+    }
+
+    @Test
+    public void givenAValidInactiveCommand_shouldReturnInactiveCategoryId_whenCallsUpdateCategory() {
+        final var aCategory = Category.categoryFactory(
+                "Film",
+                null,
+                true
+        );
+
+
+        final var expectedId = aCategory.getId();
+        final var expectedName = "Filmes";
+        final var expectedDescription = "A categoria mais assistida";
+        final var isActive = false;
+
+        final var aCommand = UpdateCategoryCommand.updateCategoryFactory(
+                expectedId.getValue(),
+                expectedName,
+                expectedDescription,
+                isActive
+        );
+
+        when(categoryGateway.findById(eq(expectedId)))
+                .thenReturn(Optional.of(Category.categoryFactory(aCategory)));
+
+        when(categoryGateway.update(any()))
+                .thenAnswer(returnsFirstArg());
+
+
+        Assertions.assertTrue(aCategory.isActive());
+        Assertions.assertNull(aCategory.getDeletedAt());
+
+        final var actualOutput =
+                useCase.execute(aCommand).get();
+
+        Assertions.assertNotNull(actualOutput);
+        Assertions.assertNotNull(actualOutput.id());
+
+        Mockito
+                .verify(categoryGateway, times(1))
+                .findById(eq(expectedId));
+
+
+        Mockito.verify(categoryGateway, times(1)).update(argThat(
+                aUpdatedCategory ->
+                        Objects.equals(expectedName, aUpdatedCategory.getName())
+                                && Objects.equals(expectedDescription, aUpdatedCategory.getDescription())
+                                && Objects.equals(isActive, aUpdatedCategory.isActive())
+                                && Objects.equals(expectedId, aUpdatedCategory.getId())
+                                && Objects.equals(aCategory.getCreatedAt(), aUpdatedCategory.getCreatedAt())
+                                && aCategory.getUpdatedAt().isBefore(aUpdatedCategory.getUpdatedAt())
+                                && Objects.nonNull(aUpdatedCategory.getDeletedAt())
+        ));
+
 
     }
 }
