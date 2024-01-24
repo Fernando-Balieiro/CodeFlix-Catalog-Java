@@ -39,6 +39,38 @@ public class Category extends AggregateRoot<CategoryId> implements Cloneable {
         return new Category(id, name, description, isActive, now, now, deletedAt);
     }
 
+    public static Category categoryFactory(
+            final CategoryId anId,
+            final String name,
+            final String description,
+            final boolean active,
+            final Instant createdAt,
+            final Instant updatedAt,
+            final Instant deletedAt
+    ) {
+        return new Category(
+                anId,
+                name,
+                description,
+                active,
+                createdAt,
+                updatedAt,
+                deletedAt
+        );
+    }
+
+    public static Category categoryFactory(final Category aCategory) {
+        return categoryFactory(
+                aCategory.getId(),
+                aCategory.name,
+                aCategory.description,
+                aCategory.isActive(),
+                aCategory.createdAt,
+                aCategory.updatedAt,
+                aCategory.deletedAt
+        );
+    }
+
     public String getName() {
         return name;
     }
@@ -100,7 +132,9 @@ public class Category extends AggregateRoot<CategoryId> implements Cloneable {
         this.name = name;
         this.description = description;
         this.updatedAt = Instant.now();
-        validate(new ThrowsValidationHandler());
+
+//        NÃO FAZER CHECAGEM DE VALIDAÇÃO NO DOMÍNIO
+
         return this;
     }
 

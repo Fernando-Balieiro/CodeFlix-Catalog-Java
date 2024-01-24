@@ -11,6 +11,7 @@ import io.vavr.control.Either;
 
 import java.util.function.Supplier;
 
+import static io.vavr.API.Left;
 import static io.vavr.API.Try;
 
 public class DefaultUpdateCategoryUseCase extends UpdateCategoryUseCase{
@@ -27,14 +28,17 @@ public class DefaultUpdateCategoryUseCase extends UpdateCategoryUseCase{
         final String description = anInput.description();
         final boolean isActive = anInput.isActive();
 
-        final var aCategory = this.categoryGateway.findById(anId).orElseThrow(notFound(anId));
+        final var aCategory = this.categoryGateway.findById(anId)
+                .orElseThrow(notFound(anId));
 
-        final var notification = Notification.notificationFactory();
+        final var notification =
+                Notification.notificationFactory();
+
         aCategory
                 .update(name, description, isActive)
                 .validate(notification);
 
-        return notification.hasErrors() ? API.Left(notification) : update(aCategory);
+        return notification.hasErrors() ? Left(notification) : update(aCategory);
     }
 
     private Either<Notification, UpdateCategoryOutput> update(final Category aCategory) {

@@ -9,7 +9,7 @@ public record UpdateCategoryCommand(
 ) {
 
     public static UpdateCategoryCommand updateCategoryFactory(
-            final String anId,
+            String anId,
             final String aName,
             final String aDescription,
             final boolean isActive

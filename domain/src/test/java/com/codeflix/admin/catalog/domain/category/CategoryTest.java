@@ -292,18 +292,25 @@ public class CategoryTest {
         final var expectedErrors = 1;
         final var expectedErrorMessage = "'name' must be between 3 and 255 characters";
         final var expectedIsActive = true;
-        final var createdCategory = Category.categoryFactory(
+        final var aCategory = Category.categoryFactory(
                 expectedName,
                 expectedDescription,
                 expectedIsActive
         );
 
-        final var exception = Assertions.assertThrows(DomainException.class,
-                () -> createdCategory.update("fi", expectedDescription, expectedIsActive)
-        );
+        final var createdAt = aCategory.getCreatedAt();
+        final var updatedAt = aCategory.getUpdatedAt();
 
-        Assertions.assertEquals(exception.getErrors().get(0).message(), expectedErrorMessage);
-        Assertions.assertEquals(exception.getErrors().size(), expectedErrors);
+        final var actualCategory = aCategory.update(expectedName, expectedDescription, expectedIsActive);
+
+        Assertions.assertEquals(aCategory.getId(), actualCategory.getId());
+        Assertions.assertEquals(expectedName, actualCategory.getName());
+        Assertions.assertEquals(expectedDescription, actualCategory.getDescription());
+        Assertions.assertTrue(aCategory.isActive());
+        Assertions.assertEquals(createdAt, actualCategory.getCreatedAt());
+        Assertions.assertTrue(actualCategory.getUpdatedAt().isAfter(updatedAt));
+        Assertions.assertNull(aCategory.getDeletedAt());
+
     }
 }
 

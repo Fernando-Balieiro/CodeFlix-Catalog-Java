@@ -2,6 +2,7 @@ package com.codeflix.admin.catalog.application.category.update;
 
 import com.codeflix.admin.catalog.domain.category.Category;
 import com.codeflix.admin.catalog.domain.category.CategoryGateway;
+import com.codeflix.admin.catalog.domain.validation.handler.Notification;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,8 +16,7 @@ import java.util.Optional;
 
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class UpdateCategoryUseCaseTest {
@@ -75,6 +75,38 @@ public class UpdateCategoryUseCaseTest {
                                 && aCategory.getUpdatedAt().isBefore(aUpdateCategory.getUpdatedAt()) // TODO: Fix Assertion
                                 && Objects.isNull(aCategory.getDeletedAt())
         ));
+    }
+
+    @Test
+    public void givenAInvalidName_ShouldReturnDomainException_whenUpdateCategoryIsCalled() {
+        final var aCategory = Category.categoryFactory("Film", null, true);
+        final String expectedName = null;
+        final var expectedDescription = "A categoria mais assistida";
+        final var isActive = true;
+        final var expectedErrorMessage = "'name' should not be null";
+        final var expectedErrorCount = 1;
+        final var expectedId = aCategory.getId();
+
+        final var aCommand = UpdateCategoryCommand.updateCategoryFactory(
+                expectedId.getValue(),
+                expectedName,
+                expectedDescription,
+                isActive
+        );
+
+        when(categoryGateway.findById(eq(expectedId)))
+                .thenReturn(Optional.of(Category.categoryFactory(aCategory)));
+
+        final var notification =
+                useCase.execute(aCommand).getLeft();
+
+
+        Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage, notification.firstError().message());
+        Mockito.verify(categoryGateway, times(0)).update(any());
+
+//        TESTE QUEBRAVA POIS ESTAVA FAZENDO CHECAGEM DE VALIDAÇÃO NA CLASSE DE CATEGORIA
+
     }
 }
 
