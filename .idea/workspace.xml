@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5a17a96c-bcdb-4868-a6f0-801d0fe160f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/update/DefaultUpdateCategoryUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/com/codeflix/admin/catalog/application/category/update/UpdateCategoryUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/test/java/com/codeflix/admin/catalog/application/category/update/UpdateCategoryUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/test/java/com/codeflix/admin/catalog/application/category/update/UpdateCategoryUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain/category/Category.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,96 +85,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Admin-Catalog [test].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CreateCategoryUseCaseTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fernando/CodeFlix/Admin-Catalog/domain/src/test/java/com/codeflix/admin/catalog/domain/category&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.dobodox.adaptivecaretscroll.settings.ScrollPluginConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Admin-Catalog [test].executor": "Run",
+    "Gradle.CategoryTest.executor": "Run",
+    "Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams.executor": "Run",
+    "Gradle.CategoryTest.givenAValidInactiveCategory_ActivateAccountWhenActivateIsCalled.executor": "Run",
+    "Gradle.CategoryTest.givenInvalidEmptyName_ThrowDomainException.executor": "Run",
+    "Gradle.CategoryTest.givenInvalidNameLengthLessThan3_ThrowDomainException.executor": "Run",
+    "Gradle.CategoryTest.givenInvalidNullName_ShouldRecieveError.executor": "Run",
+    "Gradle.CategoryTest.givenValidCategory_ReturnUpdatedCategoryWhenUpdateIsCalled.executor": "Run",
+    "Gradle.CategoryTest.givenValidCategory_UpdateToInactive.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled.executor": "Debug",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommandWithInactiveCategory_ShouldReturnInactiveCategoryId_WhenCreateCategoryIsCalled.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled.executor": "Debug",
+    "Gradle.UpdateCategoryUseCaseTest.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/fernando/CodeFlix/Admin-Catalog/domain/src/test/java/com/codeflix/admin/catalog/domain/category",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/domain/src/test/java/com/codeflix/admin/catalog/domain/category" />
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CreateCategoryUseCaseTest">
-    <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.domain.category.CategoryTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CreateCategoryUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":application:test" />
-            <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.application.category.create.CreateCategoryUseCaseTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.UpdateCategoryUseCaseTest">
     <configuration name="CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -244,13 +201,61 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="UpdateCategoryUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.update.UpdateCategoryUseCaseTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":application:test" />
+            <option value="--tests" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.update.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UpdateCategoryUseCaseTest" />
+        <item itemvalue="Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled" />
         <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnCategoryId_WhenCreateCategoryIsCalled" />
         <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenValidCommand_ShouldReturnAnException_WhenGatewayThrowsRandomException" />
         <item itemvalue="Gradle.CreateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenCreateCategoryIsCalled" />
-        <item itemvalue="Gradle.CreateCategoryUseCaseTest" />
-        <item itemvalue="Gradle.CategoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -288,6 +293,7 @@
       <workItem from="1705950686279" duration="515000" />
       <workItem from="1705963351409" duration="2320000" />
       <workItem from="1705967037309" duration="407000" />
+      <workItem from="1706052788558" duration="3099000" />
     </task>
     <servers />
   </component>

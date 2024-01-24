@@ -6,7 +6,7 @@ import com.codeflix.admin.catalog.domain.validation.handler.ThrowsValidationHand
 
 import java.time.Instant;
 
-public class Category extends AggregateRoot<CategoryId> {
+public class Category extends AggregateRoot<CategoryId> implements Cloneable {
     public Category(
             final CategoryId anId,
             final String aName,
@@ -102,6 +102,16 @@ public class Category extends AggregateRoot<CategoryId> {
         this.updatedAt = Instant.now();
         validate(new ThrowsValidationHandler());
         return this;
+    }
+
+    @Override
+    public Category clone() {
+        try {
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return (Category) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
 

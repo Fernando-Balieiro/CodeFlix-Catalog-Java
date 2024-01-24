@@ -3,6 +3,7 @@ package com.codeflix.admin.catalog.application.category.update;
 import com.codeflix.admin.catalog.domain.category.Category;
 import com.codeflix.admin.catalog.domain.category.CategoryGateway;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -30,6 +31,7 @@ public class UpdateCategoryUseCaseTest {
 //    4. Teste simulando um erro generico vindo do gateway
 //    5. Teste atualizar categoria passando ID inválido
 
+    @Test
     public void givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled() {
         final var expectedName = "Filmes";
         final var expectedDescription = "A categoria mais assistida";
@@ -42,15 +44,15 @@ public class UpdateCategoryUseCaseTest {
         );
 
         final var expectedId = aCategory.getId();
-        final var aCommand = UpdateCategoryCommand.UpdateCategoryFactory(
+        final var aCommand = UpdateCategoryCommand.updateCategoryFactory(
                 expectedId.getValue(),
                 expectedName,
                 expectedDescription,
                 expectedIsActive
         );
 
-        when(categoryGateway.findById(Mockito.eq(expectedId)))
-                .thenReturn(Optional.of(aCategory));
+        when(categoryGateway.findById(eq(expectedId)))
+                .thenReturn(Optional.of(aCategory.clone()));
 
         when(categoryGateway.update(any()))
                 .thenAnswer(returnsFirstArg());
@@ -65,12 +67,12 @@ public class UpdateCategoryUseCaseTest {
 
         Mockito.verify(categoryGateway, times(1)).update(argThat(
                 aUpdateCategory ->
-                        Objects.equals(expectedName, aCategory.getName())
-                                && Objects.equals(expectedDescription, aCategory.getDescription())
-                                && Objects.equals(expectedIsActive, aCategory.isActive())
-                                && Objects.equals(expectedId, aCategory.getId())
+                        Objects.equals(expectedName, aUpdateCategory.getName())
+                                && Objects.equals(expectedDescription, aUpdateCategory.getDescription())
+                                && Objects.equals(expectedIsActive, aUpdateCategory.isActive())
+                                && Objects.equals(expectedId, aUpdateCategory.getId())
                                 && Objects.equals(aCategory.getCreatedAt(), aUpdateCategory.getCreatedAt())
-                                && aCategory.getCreatedAt().isBefore(aUpdateCategory.getUpdatedAt())
+                                && aCategory.getUpdatedAt().isBefore(aUpdateCategory.getUpdatedAt()) // TODO: Fix Assertion
                                 && Objects.isNull(aCategory.getDeletedAt())
         ));
     }
