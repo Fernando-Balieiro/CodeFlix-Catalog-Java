@@ -103,6 +103,7 @@
     "Gradle.UpdateCategoryUseCaseTest.executor": "Run",
     "Gradle.UpdateCategoryUseCaseTest.givenAInvalidName_ShouldReturnDomainException_whenUpdateCategoryIsCalled.executor": "Run",
     "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnCategoryId_whenUpdateCategoryIsCalled.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException.executor": "Run",
     "Gradle.UpdateCategoryUseCaseTest.givenAValidInactiveCommand_shouldReturnInactiveCategoryId_whenCallsUpdateCategory.executor": "Run",
     "Gradle.UpdateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenUpdateCategoryIsCalled.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -129,7 +130,7 @@
       <recent name="$PROJECT_DIR$/domain/src/main/java/com/codeflix/admin/catalog/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UpdateCategoryUseCaseTest.givenAValidInactiveCommand_shouldReturnInactiveCategoryId_whenCallsUpdateCategory">
+  <component name="RunManager" selected="Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException">
     <configuration name="CategoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -178,7 +179,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="UpdateCategoryUseCaseTest.givenAInvalidName_ShouldReturnDomainException_whenUpdateCategoryIsCalled" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -191,7 +192,7 @@
           <list>
             <option value=":application:test" />
             <option value="--tests" />
-            <option value="&quot;com.codeflix.admin.catalog.application.category.update.UpdateCategoryUseCaseTest.givenAInvalidName_ShouldReturnDomainException_whenUpdateCategoryIsCalled&quot;" />
+            <option value="&quot;com.codeflix.admin.catalog.application.category.update.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -252,11 +253,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException" />
         <item itemvalue="Gradle.UpdateCategoryUseCaseTest.givenAValidInactiveCommand_shouldReturnInactiveCategoryId_whenCallsUpdateCategory" />
         <item itemvalue="Gradle.UpdateCategoryUseCaseTest.givenInvalidName_ShouldReturnDomainException_WhenUpdateCategoryIsCalled" />
         <item itemvalue="Gradle.CategoryTest" />
         <item itemvalue="Gradle.CategoryTest.givenAValidCategory_ShouldThrowWhenGivenInvalidUpdateParams" />
-        <item itemvalue="Gradle.UpdateCategoryUseCaseTest.givenAInvalidName_ShouldReturnDomainException_whenUpdateCategoryIsCalled" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +298,7 @@
       <workItem from="1706052788558" duration="3099000" />
       <workItem from="1706060859454" duration="1386000" />
       <workItem from="1706065623610" duration="3064000" />
-      <workItem from="1706121490117" duration="3272000" />
+      <workItem from="1706121490117" duration="4688000" />
     </task>
     <servers />
   </component>

@@ -197,6 +197,52 @@ public class UpdateCategoryUseCaseTest {
 
 
     }
+
+    @Test
+    public void givenAValidCommand_shouldReturnException_whenGatewayThrowsRandomException() {
+        final var aCategory = Category.categoryFactory(
+                "Film",
+                null,
+                true
+        );
+        final var expectedId = aCategory.getId();
+        final var expectedName = "Files";
+        final var expectedDescription = "A categoria mais assistida";
+        final var isActive = true;
+        final var expectedErrorMessage = "Gateway Error";
+        final var expectedErrorCount = 1;
+
+        final var aCommand =
+                UpdateCategoryCommand.updateCategoryFactory(
+                        expectedId.getValue(),
+                        expectedName,
+                        expectedDescription,
+                        isActive
+                );
+
+        when(categoryGateway.findById(eq(expectedId)))
+                .thenReturn(Optional.of(Category.categoryFactory(aCategory)));
+
+        when(categoryGateway.update(any()))
+                .thenThrow(new IllegalStateException(expectedErrorMessage));
+
+        final var notification = useCase.execute(aCommand).getLeft();
+
+        Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage, notification.firstError().message());
+
+        Mockito.verify(categoryGateway, times(1)).update(argThat(
+                someCategory ->
+                        Objects.equals(expectedName, someCategory.getName())
+                                && Objects.equals(expectedDescription, someCategory.getDescription())
+                                && Objects.equals(isActive, someCategory.isActive())
+                                && Objects.nonNull(someCategory.getId())
+                                && Objects.nonNull(someCategory.getCreatedAt())
+                                && Objects.nonNull(someCategory.getUpdatedAt())
+                                && Objects.isNull(someCategory.getDeletedAt())
+        ));
+    }
+
 }
 
 
