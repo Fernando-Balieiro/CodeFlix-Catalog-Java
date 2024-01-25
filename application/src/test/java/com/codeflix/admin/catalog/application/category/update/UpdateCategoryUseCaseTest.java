@@ -3,8 +3,11 @@ package com.codeflix.admin.catalog.application.category.update;
 import com.codeflix.admin.catalog.application.category.create.CreateCategoryCommand;
 import com.codeflix.admin.catalog.domain.category.Category;
 import com.codeflix.admin.catalog.domain.category.CategoryGateway;
+import com.codeflix.admin.catalog.domain.category.CategoryId;
+import com.codeflix.admin.catalog.domain.exceptions.DomainException;
 import com.codeflix.admin.catalog.domain.validation.handler.Notification;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -25,6 +28,11 @@ public class UpdateCategoryUseCaseTest {
     private DefaultUpdateCategoryUseCase useCase;
     @Mock
     private CategoryGateway categoryGateway;
+
+    @BeforeEach
+    void cleanup() {
+        Mockito.reset(categoryGateway);
+    }
 
 //    1. Teste caminho feliz
 //    2. Teste passando propriedades inválidas
@@ -243,6 +251,38 @@ public class UpdateCategoryUseCaseTest {
         ));
     }
 
+    @Test
+    public void givenACommandWithInvalidId_shouldReturnNotFound_whenUpdateCategoryIsCalled() {
+        final var expectedName = "Filmes";
+        final var expectedDescription = "A categoria mais assistida";
+        final var isActive = false;
+        final var expectedId = "1234";
+
+        final var expectedErrorMessage = "Category with ID 1234 was not found";
+
+        final var aCommand = UpdateCategoryCommand.updateCategoryFactory(
+                expectedId,
+                expectedName,
+                expectedDescription,
+                isActive
+        );
+
+        when(categoryGateway.findById(eq(CategoryId.from(expectedId))))
+                .thenReturn(Optional.empty());
+
+        final var actualException = Assertions.assertThrows(
+                DomainException.class, () -> useCase.execute(aCommand)
+        );
+
+        Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
+
+
+        Mockito.verify(
+                        categoryGateway, times(1))
+                .findById(eq(CategoryId.from(expectedId)));
+
+        Mockito.verify(categoryGateway, times(0)).update(any());
+    }
 }
 
 
